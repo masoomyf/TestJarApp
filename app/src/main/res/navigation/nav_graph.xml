@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/launcherFragment">
+
+    <fragment
+        android:id="@+id/launcherFragment"
+        android:name="com.masoomyf.assignmentjar.ui.LauncherFragment"
+        android:label="LauncherFragment" >
+        <action
+            android:id="@+id/action_launcherFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+        <action
+            android:id="@+id/action_launcherFragment_to_shapeFragment"
+            app:destination="@id/shapeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.masoomyf.assignmentjar.ui.GalleryFragment"
+        android:label="GalleryFragment" />
+    <fragment
+        android:id="@+id/shapeFragment"
+        android:name="com.masoomyf.assignmentjar.ui.ShapeFragment"
+        android:label="ShapeFragment" />
+</navigation>

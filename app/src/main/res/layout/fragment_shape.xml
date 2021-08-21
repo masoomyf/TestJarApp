@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="addSquareEvent"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="addCircleEvent"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="undoEvent"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.masoomyf.assignmentjar.widgets.ShapeMakerView
+            android:id="@+id/shapeContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddSquare"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{addCircleEvent}"
+            app:icon="@drawable/ic_outline_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnAddSquare"
+            android:text="@string/add_circle"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddSquare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{addSquareEvent}"
+            app:icon="@drawable/ic_outline_crop_square_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnAddCircle"
+            app:layout_constraintEnd_toStartOf="@id/btnUndo"
+            android:text="@string/add_square"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUndo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{undoEvent}"
+            app:icon="@drawable/ic_baseline_undo_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnAddSquare"
+            android:text="@string/undo"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
